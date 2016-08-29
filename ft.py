@@ -11,14 +11,13 @@ with open('notes.csv', 'rb') as notefile:
     csv = csv.reader(notefile)
     notes = []
     for row in csv:
-        print row
-
+        notes.append(row)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-    return render_template("x.html")
-
+    
+    return render_template("x.html", notes=notes)
 
 ############
 # IFGUARD #
