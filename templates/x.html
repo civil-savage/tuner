@@ -1,5 +1,43 @@
-{{ url_for("static", filename = "t.wav") }}
+<head>
+  <style>
+    fieldset {
+    border: 0;
+    }
+    label {
+    display: block;
+    margin: 30px 0 0 0;
+    }
+    .overflow {
+    height: 200px;
+    }
+  </style>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+    $( function() {
+    $("#sel").selectmenu();
+    });
+  </script>
+</head>
 
-<audio controls>
-  <source src="t.wav" type="audio/wav">
-</audio>
+<form>
+  <fieldset>
+    <label for="sel"> Select a note </label>
+    <select name="sel" id="sel">
+      {% for note in notes %}
+      {% if loop.index0 == 0 %}
+      <option value="">NOTES</option>
+      {% else %}
+      <option value={{note[1]}}> {{note[0]}} </option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </fieldset>
+</form>
+<!--   <audio controls> -->
+<!--     <source src="t.wav" type="audio/wav"> -->
+<!--   </audio> -->
+
+
+<!-- {{ url_for("static", filename = "t.wav") }} -->
