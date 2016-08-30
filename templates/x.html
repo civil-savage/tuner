@@ -1,5 +1,5 @@
 <head>
-  <!-- <link rel="shortcut" href="{{ url_for('static', filename='t.wav') }}"> --> 
+  <link rel="shortcut" href="{{ url_for('static', filename='static/synth.wav') }}">
   <style>
     fieldset {
     border: 0;
@@ -17,6 +17,12 @@
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
   <script src="/static/tuner.js" ></script>
 </head>
+
+<audio>
+  <source src="synth.wav" type="audio/wav">
+</audio>
+
+
 <form>
   <fieldset>
     <label for="sel"><b>Select a note</b> </label>
@@ -27,8 +33,5 @@
     </select>
   </fieldset>
 </form>
-<!--   <audio controls> -->
-<!--     <source src="t.wav" type="audio/wav"> -->
-<!--   </audio> -->
 
 
