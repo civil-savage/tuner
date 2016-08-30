@@ -1,6 +1,6 @@
-    $( function() {
-	$( "#sel" ) 
-	    .selectmenu()
-	    .selectmenu( "menuWidget" )
-	    .addClass( "overFlow" );
-    });
+$( function() {
+    $( "#sel" ) 
+	.selectmenu()
+	.selectmenu( "menuWidget" )
+	.addClass( "overFlow" );
+});

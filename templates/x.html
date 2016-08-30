@@ -1,37 +1,40 @@
-<head>
-  <link rel="shortcut" href="{{ url_for('static', filename='static/synth.wav') }}">
-  <style>
-    fieldset {
-    border: 0;
-    }
-    label {
-    display: block;
-    margin: 30px 0 0 0;
-    }
-    .overflow {
-    height: 200px;
-    }
-  </style>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-  <script src="/static/tuner.js" ></script>
-</head>
-
-<audio>
-  <source src="synth.wav" type="audio/wav">
-</audio>
-
-
-<form>
-  <fieldset>
-    <label for="sel"><b>Select a note</b> </label>
-    <select name="sel" id="sel">
-      {% for note in notes %}
-        <option value={{note[1]}}> {{note[0]}} </option>
-      {% endfor %}
-    </select>
-  </fieldset>
-</form>
-
-
+<html>
+  <head>
+    <link rel="shortcut" href="{{ url_for('static', filename='static/synth.wav') }}">
+    <style>
+      fieldset {
+      border: 0;
+      }
+      label {
+      display: block;
+      margin: 30px 0 0 0;
+      }
+      .overflow {
+      height: 200px;
+      }
+    </style>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="/static/tuner.js" ></script>
+  </head>
+  <body>
+    <div>
+      <audio src="/static/synth.wav" controls autoplay loop>
+	<p>Your browser does not support the <code>audio</code> element.</p>
+      </audio>
+    </div>
+    <form>
+      <fieldset>
+	<label for="sel"><b>Select a note</b> </label>
+	<select name="sel" id="sel">
+	  {% for note in notes %}
+          <option value={{note[1]}}> {{note[0]}} </option>
+	  {% endfor %}
+	</select>
+      </fieldset>
+    </form>
+    
+    
+  </body>
+</html>
