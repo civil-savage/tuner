@@ -24,4 +24,9 @@ def main():
 if __name__ == '__main__':
     app.run(debug=True)
 
-
+# Need this for translating names later
+# def rename(name):
+#     name = name.replace('#','s')
+#     name = name.replace('b','f')
+#     name = name.replace('/','_')
+#     return name
