@@ -1,14 +1,12 @@
 import csv
 import os
+import time
 from flask import Flask, render_template, request, redirect, url_for, escape
 from pyo import *
 
 
 app = Flask(__name__)
 app.debug = True
-
-
-
 
 with open('notes.csv', 'rb') as notefile:
     csv = csv.reader(notefile)
@@ -19,7 +17,7 @@ with open('notes.csv', 'rb') as notefile:
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-    return render_template("x.html", notes=notes)
+    return render_template("tuner.html", notes=notes)
 
 
 # IFGUARD #
