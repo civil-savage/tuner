@@ -32,7 +32,7 @@ window.onload = function() {
     var audioContext = new window.AudioContext(),
 	oscillator = audioContext.createOscillator();
     oscillator.type = 'sine';
-    oscillator.frequency.value = 1500;
+    oscillator.frequency.value = 261.63;
     oscillator.start();
 
     // Create an Oscilloscope instance
